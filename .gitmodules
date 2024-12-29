@@ -1,0 +1,3 @@
+[submodule "extern/arraylist"]
+	path = extern/arraylist
+	url = git@github.com:chickenspaceprogram/arraylist
