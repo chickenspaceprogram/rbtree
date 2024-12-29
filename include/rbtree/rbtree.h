@@ -8,14 +8,16 @@
 extern "C" {
 #endif
 #include <arraylist/arraylist.h>
-
 typedef struct rbtree rbTree;
 
 struct rbtree {
     ArrayList tree_elements;
-    int (*cmp)(void *elem1, void *elem2);
+    int depth;
+    size_t next_level_size;
+
+    int (* const cmp)(const void *elem1, const void *elem2); // cancer
     int (*add)(rbTree *tree, void *element);
-    int (*search)(rbTree *tree, void *element);
+    void *(*search)(rbTree *tree, void *element);
     int (*remove)(rbTree *tree, void *element);
     size_t (*getSize)(rbTree *tree);
     void *(*getArray)(rbTree *tree);
